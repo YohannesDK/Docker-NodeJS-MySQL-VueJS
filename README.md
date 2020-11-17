@@ -10,9 +10,12 @@ What do we need?
         - [x] : vue app
         - [ ] : database
     - [ ] : create docker images for each part
+        - [ ] : server
+        - [x] : vue app
+        - [ ] : database
     - [ ] : create docker-compose, to run all containers together
   - Server API:
-    - [ ] : basic setup, with node and typescript support
+    - [x] : basic setup, with node and typescript support
     - [ ] : Testing - with Mocha
       - [ ] : add Mocha to project
       - [ ] : add assert to project
