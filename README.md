@@ -6,6 +6,9 @@ Understanding the basics of dockerizing a node js, MySQL and vue js application
 What do we need?
   - Dockerize : server, database and frontend (microservice architercture)
     - [ ] : create dockerfiles for each part
+        - [ ] : server
+        - [x] : vue app
+        - [ ] : database
     - [ ] : create docker images for each part
     - [ ] : create docker-compose, to run all containers together
   - Server API:
@@ -30,9 +33,9 @@ What do we need?
   - Database
     - [ ] : mysql database
   - Vue Js - frontend application
-    - [ ] : basic setup with vue cli and typescript support, using Vue 3 - composition API
-        - [ ] : vuex
-        - [ ] : vue router
+    - [x] : basic setup with vue cli and typescript support, using Vue 3 - composition API
+        - [x] : vuex
+        - [x] : vue router
           - [ ] : home page
           - [ ] : home login page
           - [ ] : todoes page
