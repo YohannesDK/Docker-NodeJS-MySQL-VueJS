@@ -21,14 +21,13 @@ What do we need?
       - [ ] : add assert to project
     - [ ] : express
         - [ ] : routes
-          - [ ] : home route
           - [ ] : login route
           - [ ] : get todoes route
           - [ ] : set todoes route
           - [ ] : update todoes route
           - [ ] : delete todoes route
         - [ ] : controllers
-          - [ ] : home controller
+          - [ ] : todo controller
           - [ ] : login controller
         - [ ] : bodyParser
     - [ ]: authentication
