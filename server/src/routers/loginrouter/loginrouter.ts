@@ -15,7 +15,7 @@ class LoginRouter {
 
   private _configure() {
     this.router.get('/login', (req: Request, res: Response, next: NextFunction) => {
-      res.status(200).json(this._controller.welcome());
+      res.status(200).json(this._controller.login());
     });
   }
 }

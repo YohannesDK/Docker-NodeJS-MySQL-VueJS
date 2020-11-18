@@ -3,9 +3,9 @@ class LoginController {
   title:string = 'Home';
   loggedIn:boolean = false;
   /**
-   * welcome method
+   * login controller
    */
-  public welcome() {
+  public login() {
     return {
       title: this.title,
       loggedIn : this.loggedIn

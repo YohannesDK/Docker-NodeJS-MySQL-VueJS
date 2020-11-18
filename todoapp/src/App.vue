@@ -1,12 +1,23 @@
 <template>
-<div class="container">
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container-fluid">
+    <NavBar></NavBar>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
-  <router-view/>
-</div>
 </template>
+
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import NavBar from '@/components/NavBar.vue'; // @ is an alias to /src
+
+@Options({
+  components: {
+    NavBar,
+  },
+})
+export default class App extends Vue {}
+</script>
 
 <style>
 #app {
