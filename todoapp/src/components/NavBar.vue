@@ -1,10 +1,20 @@
 <template>
   <nav class="navbar navbar-light bg-light justify-content-between">
     <a class="navbar-brand">Navbar</a>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+      <a class="nav-link" href="#"><router-link to="/">Home</router-link></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><router-link to="/about">About</router-link></a>
+      </li>
+      <li class="nav-item" v-if="!loggedIn">
+        <a class="nav-link" href="#"><router-link to="/login">Login</router-link></a>
+      </li>
+      <li class="nav-item" v-if="loggedIn">
+        <a class="nav-link" @click="logout">Logout</a>
+      </li>
+  </ul>
   </nav>
 </template>
 
@@ -13,10 +23,16 @@ import { Vue } from 'vue-class-component';
 import store from '../store';
 
 export default class NavBar extends Vue {
-  loggedIn!: boolean
+  l !: boolean
 
-  created() {
-    this.loggedIn = store.state.loggedIn;
+  public get loggedIn(): boolean {
+    this.l = store.getters.loggedIn;
+    return store.getters.loggedIn;
+  }
+
+  logout() {
+    store.dispatch('logout');
+    this.l = this.loggedIn;
   }
 }
 </script>
