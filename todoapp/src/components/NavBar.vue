@@ -11,7 +11,7 @@
       <li class="nav-item" v-if="!loggedIn">
         <a class="nav-link" href="#"><router-link to="/login">Login</router-link></a>
       </li>
-      <li class="nav-item" v-if="loggedIn">
+      <li class="nav-item logout" v-if="loggedIn">
         <a class="nav-link" @click="logout">Logout</a>
       </li>
   </ul>
@@ -38,5 +38,7 @@ export default class NavBar extends Vue {
 </script>
 
 <style scoped>
-/* ... */
+.logout{
+  cursor: pointer;
+}
 </style>
