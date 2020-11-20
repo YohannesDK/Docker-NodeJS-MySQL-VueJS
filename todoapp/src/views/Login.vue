@@ -31,12 +31,26 @@
 
 <script lang="ts">
 import { Vue } from 'vue-class-component';
-import store from '../store';
+// import store from '../store';
 
 export default class Login extends Vue {
   signin(): void {
-    store.dispatch('login');
-    this.$router.push('/');
+    // store.dispatch('login');
+    this.axios.get('/login')
+      .then((response) => {
+        if (response.data.loggedIn) {
+          console.log('sucess');
+        }
+        console.log(response);
+      }).catch((error) => {
+        console.log(error);
+      })
+      .then(() => {
+        // always executed
+        console.log('alwas');
+        console.log(this.axios.defaults.baseURL);
+      });
+    // this.$router.push('/');
   }
 }
 </script>

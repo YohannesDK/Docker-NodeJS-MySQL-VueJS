@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import { Vue } from 'vue-class-component';
 import Weekdo from '../models/Weekdo';
 import ToDo from '../models/ToDo';
 
@@ -27,7 +28,13 @@ export default createStore({
   },
   actions: {
     login: (context) => {
-      context.commit('loginStatus');
+      Vue.prototype.axios.get('/login')
+        .then((response) => {
+          if (response.data.loggedIn) {
+            context.commit('loginStatus');
+          }
+          console.log(response);
+        });
     },
     logout: (context) => {
       context.commit('logoutStatus');

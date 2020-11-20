@@ -3,7 +3,7 @@ import LoginRouter from './loginrouter/loginrouter'
 
 class MainRouter {
   private _router = Router();
-  private _subrouterHome = LoginRouter;
+  private _subLogin = LoginRouter;
   
   
   public get router() : Router {
@@ -15,7 +15,7 @@ class MainRouter {
   }
 
   private _configure() {
-    this._router.use('/', this._subrouterHome)
+    this._router.use('/', this._subLogin)
   }
 }
 

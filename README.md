@@ -4,7 +4,8 @@ Understanding the basics of dockerizing a node js, MySQL and vue js application 
 Links:
   * https://martinfowler.com/microservices/
   * https://wkrzywiec.medium.com/how-to-run-database-backend-and-frontend-in-a-single-click-with-docker-compose-4bcda66f6de
-## What will we create? A Todo application - (Weekdo)
+  * https://www.digitalocean.com/community/tutorials/how-to-set-up-vue-js-authentication-and-route-handling-using-vue-router
+## What will we create? A Todo application
 ```
 What do we need?
   - Dockerize : server, database and frontend (microservice architercture)

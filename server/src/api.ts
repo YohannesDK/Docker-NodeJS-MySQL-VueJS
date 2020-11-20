@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import cors from 'cors';
 import express, {Request, Response, NextFunction} from 'express'
 import bodyParser from 'body-parser';
 import MainRouter from './routers/MainRouter'
@@ -7,6 +8,20 @@ import MainRouter from './routers/MainRouter'
 dotenv.config({
   path: '.env'
 });
+
+const options: cors.CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: 'http://127.0.0.1:3000',
+  preflightContinue: false,
+};
 
 /**
  * Express server application class
@@ -23,6 +38,10 @@ const server = new Server();
 
 // add parser for application/json
 server.app.use(bodyParser.json());
+
+// add cors to api
+server.router.use(cors(options));
+server.router.options('*', cors(options));
 
 // make server app handle any route starting with /api
 server.app.use('/api', server.router);
