@@ -5,7 +5,7 @@ Links:
   * https://martinfowler.com/microservices/
   * https://wkrzywiec.medium.com/how-to-run-database-backend-and-frontend-in-a-single-click-with-docker-compose-4bcda66f6de
   * https://www.digitalocean.com/community/tutorials/how-to-set-up-vue-js-authentication-and-route-handling-using-vue-router
-## What will we create? A Todo application
+## What will we create? A Todo application - (Weekdo)
 ```
 What do we need?
   - Dockerize : server, database and frontend (microservice architercture)
