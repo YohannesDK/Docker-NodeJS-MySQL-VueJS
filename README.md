@@ -1,5 +1,5 @@
 # Docker-NodeJS-MySQL-VueJS
-Understanding the basics of dockerizing a node js, MySQL and vue js application
+Understanding the basics of dockerizing a node js, MySQL and vue js application with microservices architecture in mind!
 
 Links:
   * https://martinfowler.com/microservices/
