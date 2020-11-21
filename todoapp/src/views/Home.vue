@@ -25,9 +25,8 @@ export default class Home extends Vue {
     this.weekdoes = v;
   }
 
-  created() {
-    console.log(store.state.weekdoes());
-    this.l = (store.state.weekdoes);
+  mounted() {
+    this.l = (store.getters.weekdoes2);
   }
 }
 </script>

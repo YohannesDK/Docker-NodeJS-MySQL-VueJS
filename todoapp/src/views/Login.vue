@@ -7,10 +7,12 @@
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputUsername" class="sr-only">Username</label>
       <input type="text" id="inputUsername" class="form-control"
-        placeholder="Username" required="" autofocus="">
+        placeholder="Username" required="" autofocus=""
+        v-model="username">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control"
-      placeholder="Password" required="">
+      placeholder="Password" required=""
+      v-model="password">
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
       </form>
@@ -31,27 +33,29 @@
 
 <script lang="ts">
 import { Vue } from 'vue-class-component';
-// import store from '../store';
+import store from '../store';
 
 export default class Login extends Vue {
+  username !: string;
+
+  password !: string;
+
   signin(): void {
-    // store.dispatch('login');
-    this.axios.get('/login')
-      .then((response) => {
-        if (response.data.loggedIn) {
-          console.log('sucess');
+    const form = {
+      username: this.username,
+      password: this.password,
+    };
+    this.axios.post('/login', JSON.stringify(form))
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.loggedIn) {
+          store.dispatch('login');
         }
-        console.log(response);
-      }).catch((error) => {
-        console.log(error);
-        console.log('her');
+        this.$router.push('/');
       })
-      .then(() => {
-        // always executed
-        console.log('alwas');
-        console.log(this.axios.defaults.baseURL);
+      .catch((error) => {
+        console.error(error);
       });
-    // this.$router.push('/');
   }
 }
 </script>

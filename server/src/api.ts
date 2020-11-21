@@ -40,9 +40,16 @@ const server = new Server();
 // add parser for application/json
 server.app.use(bodyParser.json());
 
+// support encoded bodies
+server.app.use(express.urlencoded({ extended: true })); 
+
+// support encoded bodies
+server.app.use(bodyParser.urlencoded({ extended: true })); 
+
 // add cors to api
 server.router.use(cors(options));
 server.router.options('*', cors(options));
+
 
 // make server app handle any route starting with /api
 server.app.use('/api', server.router);

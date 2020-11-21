@@ -1,3 +1,3 @@
-export function login() {
 
+export function login(this: unknown) {
 }

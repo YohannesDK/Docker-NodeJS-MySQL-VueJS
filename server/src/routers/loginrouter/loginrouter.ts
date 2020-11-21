@@ -15,8 +15,14 @@ class LoginRouter {
 
   private _configure() {
     this.router.get('/login', (req: Request, res: Response, next: NextFunction) => {
-      console.log(req.body);
-      res.status(200).json(this._controller.login());
+      console.log(req.body);      
+      res.header({'Access-Control-Allow-Origin': '*'}).status(200).json(this._controller.login());
+    });
+    
+    this.router.post('/login', (req: Request, res: Response, next: NextFunction) => {
+      console.log((req.body));
+      let data = JSON.parse(Object.keys(req.body)[0]);
+      res.header({'Access-Control-Allow-Origin': '*'}).status(200).json(this._controller.login(data));
     });
   }
 }
