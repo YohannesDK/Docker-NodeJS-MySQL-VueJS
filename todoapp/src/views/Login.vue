@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="form-signin" @submit="signin()">
+    <form class="form-signin" @submit.prevent="signin()">
       <img class="mb-4"
       src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
       alt="" width="72" height="72">
@@ -44,6 +44,7 @@ export default class Login extends Vue {
         console.log(response);
       }).catch((error) => {
         console.log(error);
+        console.log('her');
       })
       .then(() => {
         // always executed

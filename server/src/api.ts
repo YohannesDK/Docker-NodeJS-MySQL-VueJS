@@ -16,10 +16,11 @@ const options: cors.CorsOptions = {
     'Content-Type',
     'Accept',
     'X-Access-Token',
+    'Access-Control-Allow-Origin',
   ],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: 'http://127.0.0.1:3000',
+  origin: '*',
   preflightContinue: false,
 };
 
