@@ -11,7 +11,6 @@ import { Options, Vue } from 'vue-class-component';
 import Welcome from '@/components/welcomeComponent.vue'; // @ is an alias to /src
 import store from '../store';
 import Weekdo from '../models/Weekdo';
-// import ToDo from '../models/ToDo';
 
 @Options({
   components: {

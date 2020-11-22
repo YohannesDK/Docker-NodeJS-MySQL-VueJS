@@ -6,6 +6,7 @@ export default createStore({
   state: {
     loggedIn: false,
     weekdoes: null as unknown as Array<Weekdo>,
+    user: null as unknown as string,
   },
   mutations: {
     loginStatus: (state) => {
@@ -25,6 +26,9 @@ export default createStore({
       }
       state.weekdoes = Weekdoes;
     },
+    SetUserTo: (state, username) => {
+      state.user = username;
+    },
   },
   actions: {
     login: (context) => {
@@ -36,10 +40,14 @@ export default createStore({
     Weekdoes: (context) => {
       context.commit('initWeekdoes');
     },
+    settUser: (context, username: string) => {
+      context.commit('SetUserTo', username);
+    },
   },
   getters: {
     loggedIn: (state) => state.loggedIn,
     weekdoes: (state) => state.weekdoes,
+    getUser: (state) => state.user,
   },
   modules: {
   },

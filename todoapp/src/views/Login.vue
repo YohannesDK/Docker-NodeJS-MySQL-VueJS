@@ -50,6 +50,7 @@ export default class Login extends Vue {
         console.log(res.data);
         if (res.data.loggedIn) {
           store.dispatch('login');
+          store.dispatch('settUser', this.username);
         }
         this.$router.push('/');
       })
