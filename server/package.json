@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "build": "tsc",
     "serve": "nodemon src/api.ts"
   },
   "keywords": [],
