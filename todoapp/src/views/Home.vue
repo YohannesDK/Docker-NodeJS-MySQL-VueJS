@@ -18,14 +18,21 @@ import Weekdo from '../models/Weekdo';
   },
 })
 export default class Home extends Vue {
-  l: any;
+  weekdoes!: Array<Weekdo>
 
-  private set weekdoes(v: Array<Weekdo>) {
+  public get getweekdoes(): Weekdo[] {
+    return this.weekdoes;
+  }
+
+  public set setweekdoes(v: Array<Weekdo>) {
     this.weekdoes = v;
   }
 
   mounted() {
-    this.l = (store.getters.weekdoes2);
+    const data = JSON.parse(JSON.stringify(store.getters.weekdoes));
+    if (data !== null) {
+      this.weekdoes = data;
+    }
   }
 }
 </script>
