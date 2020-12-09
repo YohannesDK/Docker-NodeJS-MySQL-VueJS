@@ -3,7 +3,7 @@
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">{{day}}</h2>
-            <span v-for="t in todo.todo" :key="t">
+            <span v-for="t in todo" :key="t">
               <p class="card-text">{{t.todo}}</p>
               <p class="card-text">{{t.timeToComplete}}</p>
             </span>
