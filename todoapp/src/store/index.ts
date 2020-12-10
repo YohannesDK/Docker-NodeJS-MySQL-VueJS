@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import Test from '@/store/modules/test';
 import Weekdo from '../models/Weekdo';
 import ToDo from '../models/ToDo';
 
@@ -23,16 +24,29 @@ export default createStore({
         const Todoes = new Array<ToDo>();
         const weekdo: Weekdo = { day: days[i], todoes: Todoes };
         const todo: ToDo = {
+          id: i,
           todo: `
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Lojrem ipsum dolor sit amet, consectetur adipisicing elit.
                 Rem magni quas ex numquam, maxime minus quam molestias corporis quod,
                 ea minima accusamus.`,
           timeToComplete: new Date(),
+          done: false,
         };
         weekdo.todoes.push(todo);
         Weekdoes.push(weekdo);
       }
       state.weekdoes = Weekdoes;
+    },
+    updateTodoDone: (state, obj) => {
+      state.weekdoes[obj.ind].todoes.forEach((ele: ToDo) => {
+        if (ele.id === obj.newTodo.id) {
+          ele = obj.newTodo;
+          // try this: 
+          // ele.id = obj.newTodo.id 
+          // ele.done = obj.newTodo.done 
+        }
+      });
+      console.log(state.weekdoes);
     },
     SetUserTo: (state, username) => {
       state.user = username;
@@ -51,6 +65,9 @@ export default createStore({
     settUser: (context, username: string) => {
       context.commit('SetUserTo', username);
     },
+    updateTodo: (context, obj: any) => {
+      context.commit('updateTodoDone', obj);
+    },
   },
   getters: {
     loggedIn: (state) => state.loggedIn,
@@ -58,5 +75,6 @@ export default createStore({
     getUser: (state) => state.user,
   },
   modules: {
+    Test, // need to fix this....
   },
 });

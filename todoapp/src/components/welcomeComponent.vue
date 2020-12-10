@@ -26,7 +26,9 @@
     <!-- Content Row -->
     <div class="row">
       <TodoComponent v-for="(todo, index) in weekdoes"
-      :key="index" :id="index" :todo="todo.todoes" :day="todo.day"/>
+      :key="index" :id="index" :index="index" :todo="todo.todoes" :day="todo.day"
+      @todo-done="Tododone"
+      />
     </div>
   </div>
 </template>
@@ -53,6 +55,19 @@ export default class Welcome extends Vue {
 
   public set setweekdoes(v: Array<Weekdo>) {
     this.weekdoes = v;
+  }
+
+  public Tododone(index: number, id: number): void{
+    this.weekdoes[index].todoes.forEach((ele) => {
+      const e = ele;
+      if (e.id === id) {
+        e.done = !e.done;
+        store.dispatch('updateTodo', {
+          ind: index,
+          newTodo: ele,
+        });
+      }
+    });
   }
 
   private initUser() {
