@@ -3,10 +3,12 @@
         <div class="card h-100">
           <div class="card-body">
             <h2 class="card-title">{{day}}</h2>
-            <span v-for="t in todo" :key="t">
-              <p class="card-text">{{t.todo}}</p>
-              <p class="card-text">{{t.timeToComplete}}</p>
-            </span>
+            <div class="wrapper" v-if="loggedIn()">
+              <span v-for="t in todo" :key="t">
+                <p class="card-text">{{t.todo}}</p>
+                <p class="card-text">{{t.timeToComplete}}</p>
+              </span>
+            </div>
           </div>
           <div class="card-footer">
             <a href="#" class="btn btn-primary btn-sm">More Info</a>
@@ -17,6 +19,7 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { mapGetters } from 'vuex';
 import store from '../store';
 import Weekdo from '../models/Weekdo';
 import ToDo from '../models/ToDo';
@@ -33,10 +36,13 @@ const todotype = {} as ToDo;
 export default class TodoComponent extends Vue {
   todo!: ToDo;
 
+  logged!: boolean;
+
   day!: string;
 
-  mounted() {
-    console.log(this.todo);
+  public loggedIn(): boolean {
+    this.logged = store.getters.loggedIn;
+    return store.getters.loggedIn;
   }
 }
 </script>
