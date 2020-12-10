@@ -56,7 +56,6 @@ export default class TodoComponent extends Vue {
    * doneFunc
    */
   public doneFunc(id: number): void {
-    console.log(this.todo);
     this.$emit('todo-done', this.index, id);
     console.log(this.todo);
   }

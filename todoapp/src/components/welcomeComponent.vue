@@ -68,6 +68,8 @@ export default class Welcome extends Vue {
         });
       }
     });
+    console.log(this.weekdoes);
+    this.initweekdoes();
   }
 
   private initUser() {
