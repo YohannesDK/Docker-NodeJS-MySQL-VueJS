@@ -38,15 +38,16 @@ export default createStore({
       state.weekdoes = Weekdoes;
     },
     updateTodoDone: (state, obj) => {
+      console.log('from state 1', state.weekdoes);
+      let conut = 0;
       state.weekdoes[obj.ind].todoes.forEach((ele: ToDo) => {
         if (ele.id === obj.newTodo.id) {
-          ele = obj.newTodo;
-          // try this: 
-          // ele.id = obj.newTodo.id 
-          // ele.done = obj.newTodo.done 
+          state.weekdoes[obj.ind].todoes[conut].done = true;
+          return;
         }
+        conut += 1;
       });
-      console.log(state.weekdoes);
+      console.log('from state', state.weekdoes);
     },
     SetUserTo: (state, username) => {
       state.user = username;

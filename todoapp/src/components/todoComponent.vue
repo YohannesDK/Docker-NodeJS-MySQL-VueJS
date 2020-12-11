@@ -36,6 +36,9 @@ const todotype = {} as ToDo;
     day: {} as string,
     index: {} as number,
   },
+  emits: {
+    done: 'todo-done',
+  },
 })
 
 export default class TodoComponent extends Vue {
