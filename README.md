@@ -11,30 +11,30 @@ Links:
 What do we need?
   - Dockerize : server, database and frontend (microservice architercture)
     - [ ] : create dockerfiles for each part
-        - [ ] : server
+        - [x] : server
         - [x] : vue app
         - [ ] : database
     - [ ] : create docker images for each part
-        - [ ] : server
+        - [x] : server
         - [x] : vue app
         - [ ] : database
     - [ ] : create docker-compose, to run all containers together
   - Server API:
     - [x] : basic setup, with node and typescript support
     - [ ] : Testing - with Mocha
-      - [ ] : add Mocha to project
-      - [ ] : add assert to project
+      - [x] : add Mocha to project
+      - [x] : add assert to project
     - [ ] : express
         - [ ] : routes
-          - [ ] : login route
-          - [ ] : get todoes route
-          - [ ] : set todoes route
+          - [x] : login route
+          - [x] : get todoes route
+          - [x] : set todoes route
           - [ ] : update todoes route
           - [ ] : delete todoes route
         - [ ] : controllers
           - [ ] : todo controller
           - [ ] : login controller
-        - [ ] : bodyParser
+        - [x] : bodyParser
     - [ ]: authentication
     - [ ] : mySql connector
   - Database
@@ -43,8 +43,8 @@ What do we need?
     - [x] : basic setup with vue cli and typescript support, using Vue 3 - composition API
         - [x] : vuex
         - [x] : vue router
-          - [ ] : home page
-          - [ ] : home login page
-          - [ ] : todoes page
+          - [x] : home page
+          - [x] : login page
+          - [x] : todoes page
   ...
 ```
