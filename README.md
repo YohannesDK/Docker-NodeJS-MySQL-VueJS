@@ -36,6 +36,7 @@ What do we need?
           - [ ] : login controller
         - [x] : bodyParser
     - [ ]: authentication
+        - [ ] : Use and learn OAuth - authentication
     - [ ] : mySql connector
   - Database
     - [ ] : mysql database
