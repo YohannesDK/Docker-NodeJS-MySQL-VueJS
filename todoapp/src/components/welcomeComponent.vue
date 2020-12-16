@@ -58,7 +58,6 @@ export default class Welcome extends Vue {
   }
 
   public Tododone(index: number, id: number): void{
-    console.log('first', this.weekdoes);
     let count = 0;
     this.weekdoes[index].todoes.forEach((ele) => {
       if (ele.id === id) {
@@ -66,13 +65,10 @@ export default class Welcome extends Vue {
           ind: index,
           newTodo: ele,
         });
-        this.weekdoes[index].todoes[count].done = true;
         return;
       }
       count += 1;
     });
-    console.log('second', this.weekdoes);
-    // this.initweekdoes();
   }
 
   private initUser() {
@@ -88,7 +84,6 @@ export default class Welcome extends Vue {
     if (data !== null) {
       this.weekdoes = data;
     }
-    console.log('init weekdoes', this.weekdoes);
   }
 
   created() {
