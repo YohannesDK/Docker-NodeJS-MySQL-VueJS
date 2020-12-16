@@ -1,5 +1,5 @@
 export default interface ToDo{
-  id: number,
+  id: number;
   todo: string;
   timeToComplete: Date;
   done: boolean;
