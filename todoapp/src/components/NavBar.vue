@@ -33,7 +33,7 @@ export default class NavBar extends Vue {
   logout() {
     store.dispatch('logout');
     this.l = this.loggedIn;
-    window.location.href = '/';
+    this.$router.push('/');
   }
 }
 </script>
