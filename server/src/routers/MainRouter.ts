@@ -1,9 +1,11 @@
 import {Router} from 'express';
 import LoginRouter from './loginrouter/loginrouter'
+import todorouter from './Todorouter/todorouter';
 
 class MainRouter {
   private _router = Router();
   private _subLogin = LoginRouter;
+  private _subTodoes = todorouter;
   
   
   public get router() : Router {
@@ -16,6 +18,7 @@ class MainRouter {
 
   private _configure() {
     this._router.use('/', this._subLogin)
+    this._router.use('/todoes', this._subTodoes)
   }
 }
 

@@ -1,13 +1,15 @@
 import dotenv from 'dotenv';
 import cors from 'cors';
-import express, {Request, Response, NextFunction} from 'express'
+import express, {Request, Response, NextFunction} from 'express';
 import bodyParser from 'body-parser';
-import MainRouter from './routers/MainRouter'
+import MainRouter from './routers/MainRouter';
 
 // load env variables from .env
 dotenv.config({
   path: '.env'
 });
+
+
 
 const options: cors.CorsOptions = {
   allowedHeaders: [
