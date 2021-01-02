@@ -7,6 +7,7 @@ Links:
   * https://www.digitalocean.com/community/tutorials/how-to-set-up-vue-js-authentication-and-route-handling-using-vue-router
   * https://itnext.io/lets-dockerize-a-nodejs-express-api-22700b4105e4
   * https://dev.to/juliest88/how-to-build-rest-api-with-nodejs-express-and-mysql-31jk
+  * https://blog.logrocket.com/implementing-oauth-2-0-in-node-js/
 ## What will we create? A Todo application - (Weekdo)
 ```
 What do we need?
