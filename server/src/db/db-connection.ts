@@ -8,7 +8,12 @@ dotenv.config({
 class DBConnection {
   db!: mysql.Pool;
 
-  HttpStatusCodes!:any;
+  // HttpStatusCodes!:any;
+// like ENUM
+  HttpStatusCodes: any = Object.freeze({
+    ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: 422,
+    ER_DUP_ENTRY: 409
+  });
 
   constructor() {
     this.db = mysql.createPool({
@@ -17,13 +22,8 @@ class DBConnection {
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE
     });
-    // like ENUM
 
-    // like ENUM
-    this.HttpStatusCodes = Object.freeze({
-      ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: 422,
-      ER_DUP_ENTRY: 409
-    });
+    
 
     this.checkConnection();
   }
@@ -65,9 +65,9 @@ class DBConnection {
        // execute will internally call prepare and query
        this.db.execute(sql, callback, values);
     }).catch((err) => {
-      const mysqlErrorList = Object.keys(this.HttpStatusCodes);
+      // const mysqlErrorList = Object.keys(this.HttpStatusCodes);
       // convert mysql errors which in the mysqlErrorList list to http status code
-      err.status = mysqlErrorList.includes(err.code) ? this.HttpStatusCodes[err.code] : err.status;
+      // err.status = mysqlErrorList.includes(err.code) ? this.HttpStatusCodes[err.code] : err.status;
       throw err;
     });
   }

@@ -17,7 +17,7 @@ class TodoRouter {
   private _configure() {
     this.router.get('/all', (req: Request, res: Response, next: NextFunction) => {
       awaitHandlerFactory(this._controller.getAllTodoes(req, res, next))
-      res.header({'Access-Control-Allow-Origin': '*'}).status(200).json('it worked');
+      // res.header({'Access-Control-Allow-Origin': '*'}).status(200).json('it worked');
     });
   }
 }

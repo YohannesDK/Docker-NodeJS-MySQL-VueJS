@@ -14,6 +14,7 @@ class TodoController {
     console.log(todoes);
     
     // res.send(todoes);
+    res.header({'Access-Control-Allow-Origin': '*'}).status(200).json('todoes');
   }
 }
 
