@@ -8,6 +8,19 @@ Links:
   * https://itnext.io/lets-dockerize-a-nodejs-express-api-22700b4105e4
   * https://dev.to/juliest88/how-to-build-rest-api-with-nodejs-express-and-mysql-31jk
   * https://blog.logrocket.com/implementing-oauth-2-0-in-node-js/
+
+## Rememeber to create .env file for each part of the application:
+  * API:
+	- NODE_ENV
+	- APP_PORT
+	- DB_HOST
+	- DB_USER
+	- DB_PASSWORD
+	- DB_DATABASE
+  * Application 
+	- BASE_URL  
+
+
 ## What will we create? A Todo application - (Weekdo)
 ```
 What do we need?
