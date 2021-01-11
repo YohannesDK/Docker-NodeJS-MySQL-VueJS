@@ -21,4 +21,8 @@ export default class Test extends VuexModule {
   public UpdateTestString(newTestString: string): void {
     this.context.commit('MutateTest', newTestString);
   }
+
+  public get testval(): string {
+    return this.test;
+  }
 }

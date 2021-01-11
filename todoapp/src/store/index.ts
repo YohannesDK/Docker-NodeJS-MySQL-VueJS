@@ -74,6 +74,6 @@ export default createStore({
     getUser: (state) => state.user,
   },
   modules: {
-    Test, // need to fix this....
+    test: Test, // need to fix this....
   },
 });

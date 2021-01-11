@@ -4,6 +4,7 @@
     <div class="container">
       <router-view/>
     </div>
+    <h1>{{ teststring }}</h1>
   </div>
 </template>
 
